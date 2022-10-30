@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class BreakBelow : MonoBehaviour
 {
+    GM gM;
     Collider2D c2D;
+    public GameObject landParticle;
 
     void Start(){
+        gM = GM.inst;
         c2D = GetComponent<Collider2D>();
     }
 
@@ -17,6 +20,8 @@ public class BreakBelow : MonoBehaviour
         c2D.enabled = true;
         foreach(Collider2D i in slam){
             if(i.TryGetComponent(out Breakable breakable)){
+                if(slam.Length > 0 && landParticle != null){Instantiate(landParticle, new Vector2(transform.position.x, transform.position.y - transform.localScale.y/2), Quaternion.identity);}
+                gM.ScreenShake(2, 100);
                 breakable.Break();
             }
         }

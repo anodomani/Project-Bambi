@@ -550,11 +550,11 @@ InputManager:
     axis: 5
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Debug Horizontal
+    m_Name: Restart
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: left
-    positiveButton: right
+    negativeButton: 
+    positiveButton: r
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
