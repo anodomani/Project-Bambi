@@ -121,8 +121,8 @@ public class Player : MonoBehaviour
         //set velocity while jumping
         if(jumping){rb2D.velocity = new Vector2(rb2D.velocity.x, jumpSpeed);}
         //move horizontal
-        if(sliding){slideMod += 0.5f;}
-        else if(slideMod > 0){slideMod -= 0.5f;}
+        if(sliding && rb2D.velocity.y > 0){slideMod += 0.5f;}
+        else if(slideMod > 0 && (!sliding || moveSpeedCurrent == 0)){slideMod -= 0.25f;}
         rb2D.velocity = new Vector2(moveSpeedCurrent, rb2D.velocity.y);
         //limit horizontal jump distance
         //print("current jump distance: " + (int)(Mathf.Abs(lastGroundedPosition.x - transform.position.x)*10));
