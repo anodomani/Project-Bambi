@@ -22,7 +22,7 @@ public class sceneManager : MonoBehaviour
         }
     }
 
-    public void sceneChanger(string sceneName)
+    public void changeScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
