@@ -63,5 +63,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlopeRight
       objectReference: {fileID: 0}
+    - target: {fileID: 8906637004576768275, guid: 6ef5c3f955d59b5419ee3cda6572fedd, type: 3}
+      propertyPath: m_TagString
+      value: SlopeRight
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ef5c3f955d59b5419ee3cda6572fedd, type: 3}
