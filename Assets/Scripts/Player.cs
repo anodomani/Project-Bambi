@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
         //player abilities
         switch(playerIndex){
             case 1:
-                if(!grounded && rb2D.velocity.y < -2f){
+                if(!grounded && rb2D.velocity.y < -2f && sliding == 0){
                     //print("groundPound");
                     c2D.enabled = false;
                     Collider2D[] slamDown = Physics2D.OverlapBoxAll(new Vector2(transform.position.x, transform.position.y - 0.5f), new Vector2(0.5f, 0.5f), 0);
@@ -92,10 +92,10 @@ public class Player : MonoBehaviour
         //check if grounded and sliding
         c2D.enabled = false;
         groundCheckAll = Physics2D.OverlapBoxAll(new Vector2(transform.position.x, transform.position.y - 0.5f), new Vector2(0.75f, 0.1f), 0);
-        Collider2D[] groundCheckSlide = Physics2D.OverlapBoxAll(new Vector2(transform.position.x, transform.position.y - 0.75f), new Vector2(0.2f, 1f), 0);
+        Collider2D[] groundCheckSlide = Physics2D.OverlapBoxAll(new Vector2(transform.position.x, transform.position.y - 0.75f), new Vector2(0.2f, 0.5f), 0);
         c2D.enabled = true;
         foreach(Collider2D i in groundCheckAll){
-            if(i.tag == "Ground" || i.tag == "Entity"){
+            if(i.tag == "Ground" || i.tag == "Entity" || i.tag == "Slope" || i.tag == "SlopeRight"){
                 grounded = i.gameObject;
                 lastGroundedPosition = Vector2Int.RoundToInt(transform.position);
                 rb2D.gravityScale = 7f;
@@ -154,7 +154,8 @@ public class Player : MonoBehaviour
         if(Mathf.Abs(slideMod) < 0.2f){slideMod = 0;}
         //limit horizontal jump distance
         if(Mathf.Abs(lastGroundedPosition.x - transform.position.x) > maxJumpDistance.x){
-            rb2D.velocity = new Vector2(Mathf.Lerp(rb2D.velocity.x, 0, 0.5f), rb2D.velocity.y);
+            print("falling now");
+            rb2D.velocity = new Vector2(Mathf.Lerp(rb2D.velocity.x, 0, 0.75f), rb2D.velocity.y);
         }
     }
 
@@ -162,7 +163,7 @@ public class Player : MonoBehaviour
         if(grounded){Gizmos.color = Color.green;}else{Gizmos.color = Color.red;}
         Gizmos.DrawWireCube(new Vector2(transform.position.x, transform.position.y - 0.5f), new Vector2(0.75f, 0.1f));
         if(sliding > 0){Gizmos.color = Color.green;}else{Gizmos.color = Color.red;}
-        Gizmos.DrawWireCube(new Vector2(transform.position.x, transform.position.y - 0.75f), new Vector2(0.2f, 1f));
+        Gizmos.DrawWireCube(new Vector2(transform.position.x, transform.position.y - 0.75f), new Vector2(0.2f, 0.5f));
         if(jumping){Gizmos.color = Color.green;}else{Gizmos.color = Color.red;}
         Gizmos.DrawWireCube(new Vector2(transform.position.x, transform.position.y + 0.5f), new Vector2(0.5f, 0.25f));
         if(playerIndex == 1 && Application.isPlaying){
