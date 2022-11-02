@@ -5,6 +5,42 @@ TextureImporter:
   - first:
       213: -8219309136479355269
     second: Bambi Sprite Sheet_0
+  - first:
+      213: 7429691521991609673
+    second: Bambi Sprite Sheet_1
+  - first:
+      213: -4619522892070158273
+    second: Bambi Sprite Sheet_2
+  - first:
+      213: 1156451815977350444
+    second: Bambi Sprite Sheet_3
+  - first:
+      213: 7193494411523174908
+    second: Bambi Sprite Sheet_4
+  - first:
+      213: -7786958624689149501
+    second: Bambi Sprite Sheet_5
+  - first:
+      213: 4231717533742424302
+    second: Bambi Sprite Sheet_6
+  - first:
+      213: 1509441844226100311
+    second: Bambi Sprite Sheet_7
+  - first:
+      213: 5948650170854445786
+    second: Bambi Sprite Sheet_8
+  - first:
+      213: -7849264973243554739
+    second: Bambi Sprite Sheet_9
+  - first:
+      213: 6668523746877935801
+    second: Bambi Sprite Sheet_10
+  - first:
+      213: -5623664739289832168
+    second: Bambi Sprite Sheet_11
+  - first:
+      213: 1565760618085284452
+    second: Bambi Sprite Sheet_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,12 +145,12 @@ TextureImporter:
       name: Bambi Sprite Sheet_0
       rect:
         serializedVersion: 2
-        x: 74
-        y: 877
-        width: 181
-        height: 200
+        x: 78
+        y: 886
+        width: 174
+        height: 185
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -122,6 +158,258 @@ TextureImporter:
       bones: []
       spriteID: b7e760d53e52fed80800000000000000
       internalID: -8219309136479355269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bambi Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 923
+        width: 183
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94d8a0733119b1760800000000000000
+      internalID: 7429691521991609673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bambi Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 693
+        width: 176
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f308f5aa76824efb0800000000000000
+      internalID: -4619522892070158273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bambi Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 689
+        width: 251
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c257f2bacca8c0010800000000000000
+      internalID: 1156451815977350444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bambi Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 449
+        width: 192
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf1b894fd0d64d360800000000000000
+      internalID: 7193494411523174908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bambi Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 466
+        width: 247
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c92dbe436a2fe390800000000000000
+      internalID: -7786958624689149501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bambi Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 208
+        width: 149
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee062842da41aba30800000000000000
+      internalID: 4231717533742424302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bambi Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 244
+        width: 232
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c05362c5d92f410800000000000000
+      internalID: 1509441844226100311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bambi Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 233
+        width: 182
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad298d620d9dd8250800000000000000
+      internalID: 5948650170854445786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bambi Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 16
+        width: 166
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d44e6e1181fc11390800000000000000
+      internalID: -7849264973243554739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bambi Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 16
+        width: 166
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b09ae4340b5b8c50800000000000000
+      internalID: 6668523746877935801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bambi Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 8
+        width: 183
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8156dbe07bab4f1b0800000000000000
+      internalID: -5623664739289832168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bambi Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 441
+        width: 178
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46af4448cf2bab510800000000000000
+      internalID: 1565760618085284452
       vertices: []
       indices: 
       edges: []

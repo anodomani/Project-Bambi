@@ -11841,6 +11841,7 @@ GameObject:
   - component: {fileID: 288754247}
   - component: {fileID: 288754251}
   - component: {fileID: 288754250}
+  - component: {fileID: 288754252}
   m_Layer: 0
   m_Name: Bambi
   m_TagString: Entity
@@ -11872,6 +11873,7 @@ MonoBehaviour:
   lastGroundedPosition: {x: 0, y: 0}
   landParticle: {fileID: 0}
   slideMod: 0
+  currentAnimation: 
 --- !u!212 &288754248
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11913,7 +11915,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: -8219309136479355269, guid: b3fee1c7c07c35f48b3f18b8e766e305, type: 3}
-  m_Color: {r: 0.6509434, g: 0.40381518, b: 0.20572266, a: 1}
+  m_Color: {r: 0.9150943, g: 0.66939557, b: 0.4704966, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -11954,7 +11956,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.81, y: 2}
+    oldSize: {x: 1.74, y: 1.85}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -11984,6 +11986,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!95 &288754252
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288754246}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6f16c7c7c826745459abbbeb99871dfd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &371440512
 GameObject:
   m_ObjectHideFlags: 0
@@ -11994,6 +12015,7 @@ GameObject:
   m_Component:
   - component: {fileID: 371440514}
   - component: {fileID: 371440513}
+  - component: {fileID: 371440515}
   m_Layer: 0
   m_Name: Flower
   m_TagString: Untagged
@@ -12041,7 +12063,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: f102a3e33754d084ea291a6a979af685, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08f39812ea3d78148b61c723c5b5103b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -12060,12 +12082,38 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 371440512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.047913, y: 1.46, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalPosition: {x: 25, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &371440515
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371440512}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.895, y: 1.085}
+    newSize: {x: 5.62, y: 8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &443788007
 GameObject:
   m_ObjectHideFlags: 0
@@ -12247,6 +12295,7 @@ GameObject:
   - component: {fileID: 691087218}
   - component: {fileID: 691087217}
   - component: {fileID: 691087216}
+  - component: {fileID: 691087221}
   m_Layer: 0
   m_Name: The Hare
   m_TagString: Entity
@@ -12271,8 +12320,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.9704074, y: 1.8100001}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 1.5953178, y: 2.33}
+    newSize: {x: 1.5953178, y: 2.33}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -12315,7 +12364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   moveSpeedCurrent: 0
-  jumpSpeed: 8
+  jumpSpeed: 7.8
   maxJumpDistance: {x: 1.5, y: 2}
   jumping: 0
   grounded: {fileID: 0}
@@ -12325,6 +12374,7 @@ MonoBehaviour:
   lastGroundedPosition: {x: 0, y: 0}
   landParticle: {fileID: 887892325023689337, guid: 5cf63df6359122a4690a73d56610f75e, type: 3}
   slideMod: 0
+  currentAnimation: 
 --- !u!212 &691087219
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12365,12 +12415,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 1314183183579407402, guid: 67ce401c19a80f54baab2b71a085d693, type: 3}
-  m_Color: {r: 0.7075472, g: 0.6765023, b: 0.65080994, a: 1}
+  m_Sprite: {fileID: 7745089989921614867, guid: dbce144a827585e42b2ec3750370e64a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5953178, y: 2.33}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -12390,6 +12440,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &691087221
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691087215}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ca0730b7ff2aa8b42b559e3f8e7e7d72, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &831823994
 GameObject:
   m_ObjectHideFlags: 0
@@ -12498,7 +12567,6 @@ GameObject:
   - component: {fileID: 850963627}
   - component: {fileID: 850963629}
   - component: {fileID: 850963628}
-  - component: {fileID: 850963630}
   m_Layer: 5
   m_Name: Dialogue BG
   m_TagString: Untagged
@@ -12563,19 +12631,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850963626}
   m_CullTransparentMesh: 1
---- !u!114 &850963630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 850963626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eca6742601c30d48a07522c16acaea5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  linkedObject: {fileID: 0}
 --- !u!1001 &891985631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22430,13 +22485,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1297211049}
+  - component: {fileID: 1297211050}
   m_Layer: 0
   m_Name: Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1297211049
 Transform:
   m_ObjectHideFlags: 0
@@ -22457,6 +22513,18 @@ Transform:
   m_Father: {fileID: 2117883850}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1297211050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297211048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eca6742601c30d48a07522c16acaea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1311406399
 GameObject:
   m_ObjectHideFlags: 0
@@ -22813,8 +22881,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: a5654c5806fd1be4180f4fb3890c196d, type: 3}
-  m_Color: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
+  m_Sprite: {fileID: 21300000, guid: aacbc516bd56cd34aa4a1b8b6a27572c, type: 3}
+  m_Color: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -22855,7 +22923,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0357143, y: 1.0357143}
+    oldSize: {x: 1, y: 0.99666667}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -23469,7 +23537,6 @@ GameObject:
   - component: {fileID: 2032814807}
   - component: {fileID: 2032814810}
   - component: {fileID: 2032814809}
-  - component: {fileID: 2032814808}
   m_Layer: 5
   m_Name: Dialogue BG (1)
   m_TagString: Untagged
@@ -23496,19 +23563,6 @@ RectTransform:
   m_AnchoredPosition: {x: -84, y: -90}
   m_SizeDelta: {x: 825, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2032814808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2032814806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eca6742601c30d48a07522c16acaea5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  linkedObject: {fileID: 0}
 --- !u!114 &2032814809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24373,7 +24427,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eca6742601c30d48a07522c16acaea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linkedObject: {fileID: 1297211048}
 --- !u!1001 &4871195001435314185
 PrefabInstance:
   m_ObjectHideFlags: 0

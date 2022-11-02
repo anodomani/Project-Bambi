@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Player : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Player : MonoBehaviour
     Collider2D c2D;
     Collider2D ceilingCheck;
     Collider2D[] groundCheckAll;
+    SpriteRenderer spriteRenderer;
+    Animator animator;
     public float moveSpeed;
     public float moveSpeedCurrent;
     public float jumpSpeed;
@@ -19,12 +22,15 @@ public class Player : MonoBehaviour
     public Vector2Int lastGroundedPosition;
     public GameObject landParticle;
     public float slideMod;
+    public string currentAnimation;
 
     // Start is called before the first frame update
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
         c2D = GetComponent<Collider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     void Update(){
@@ -51,6 +57,7 @@ public class Player : MonoBehaviour
                 }
             break;
         }
+        Animate();
     }
 
     // Update is called once per frame
@@ -156,6 +163,25 @@ public class Player : MonoBehaviour
         if(Mathf.Abs(lastGroundedPosition.x - transform.position.x) > maxJumpDistance.x){
             print("falling now");
             rb2D.velocity = new Vector2(Mathf.Lerp(rb2D.velocity.x, 0, 0.75f), rb2D.velocity.y);
+        }
+    }
+
+    void Animate(){
+        string newAnimation = "Stand";
+        if (Mathf.Abs(moveSpeedCurrent) > 0.01f){
+            spriteRenderer.flipX = moveSpeedCurrent < 0f;
+            newAnimation = "Walk";
+        }else{
+            newAnimation = "Stand";
+        }
+        if(!grounded){
+            newAnimation = "Jump";
+        }else if(sliding != 0){
+            newAnimation = "Slide";
+        }
+        if(currentAnimation != newAnimation){
+            currentAnimation = newAnimation;
+            animator.Play(currentAnimation);
         }
     }
 

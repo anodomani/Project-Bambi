@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CloseDialogue : MonoBehaviour
 {
-    public GameObject linkedObject;
+    //public GameObject linkedObject;
     public void Update(){
         if(Input.GetMouseButtonDown(0)){
-            linkedObject.SetActive(false);
+            this.gameObject.SetActive(false);
         }
     }
 }
