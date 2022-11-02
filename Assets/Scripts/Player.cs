@@ -5,6 +5,7 @@ using System;
 
 public class Player : MonoBehaviour
 {
+    audioManager audioManager;
     Rigidbody2D rb2D;
     Collider2D c2D;
     Collider2D ceilingCheck;
@@ -31,6 +32,7 @@ public class Player : MonoBehaviour
         c2D = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        audioManager = audioManager.Instance;
     }
 
     void Update(){
@@ -39,6 +41,7 @@ public class Player : MonoBehaviour
             case 0:
                 moveSpeedCurrent = (moveSpeed * Input.GetAxisRaw("Horizontal"));
                 if(Input.GetButtonDown("Jump") && grounded && carrying == null ){
+                    audioManager.Play("jump");
                     jumping = true;
                 }
                 if(!grounded || Mathf.Abs(lastGroundedPosition.y - (int)transform.position.y) > maxJumpDistance.y){
@@ -49,6 +52,7 @@ public class Player : MonoBehaviour
             case 1:
                 moveSpeedCurrent = (moveSpeed * Input.GetAxisRaw("Horizontal2"));
                 if(Input.GetButtonDown("Jump2") && grounded && carrying == null){
+                    audioManager.Play("jump");
                     jumping = true;
                 }
                 if(!grounded || Mathf.Abs(lastGroundedPosition.y - (int)transform.position.y) > maxJumpDistance.y){
@@ -80,6 +84,7 @@ public class Player : MonoBehaviour
                         }
                     }
                     if(slamDown.Length > 0){
+                        audioManager.Play("groundPound");
                         if(!grounded && landParticle != null){Instantiate(landParticle, new Vector2(transform.position.x, transform.position.y - transform.localScale.y/2), Quaternion.identity);}
                         GM.inst.ScreenShake(2, 100);
                         foreach(Collider2D i in slamSides){
@@ -154,8 +159,13 @@ public class Player : MonoBehaviour
         if(sliding == 1){slideMod = -3;}
         else if(sliding == 2){slideMod = 3f;}
         
-        if(slideMod == 0 && sliding == 0){rb2D.velocity = new Vector2(moveSpeedCurrent + slideMod, rb2D.velocity.y);}
-        else{rb2D.velocity = new Vector2(slideMod, rb2D.velocity.y);}
+        if(slideMod == 0 && sliding == 0){
+            rb2D.velocity = new Vector2(moveSpeedCurrent + slideMod, rb2D.velocity.y);
+            audioManager.Play("walk");
+        }
+        else{
+            rb2D.velocity = new Vector2(slideMod, rb2D.velocity.y);
+        }
 
         if(slideMod != 0 && sliding == 0){slideMod = Mathf.Lerp(slideMod, 0, 0.1f);}
         if(Mathf.Abs(slideMod) < 0.2f){slideMod = 0;}

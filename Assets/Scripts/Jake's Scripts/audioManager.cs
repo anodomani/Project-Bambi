@@ -20,7 +20,6 @@ public class audioManager : MonoBehaviour
 
         if (Instance != null && Instance != this)
         {
-
             Destroy(this.gameObject);
         }
         else
@@ -38,8 +37,6 @@ public class audioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
-
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
