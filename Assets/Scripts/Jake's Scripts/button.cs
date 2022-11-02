@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
 
-public class settings : MonoBehaviour
+public class button : MonoBehaviour
 {
+    private audioManager audioManager;
     [SerializeField] Toggle sfxToggle;
     [SerializeField] Toggle musicToggle;
-
-    private audioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
@@ -16,12 +17,6 @@ public class settings : MonoBehaviour
         audioManager = FindObjectOfType<audioManager>();
         sfxToggle.isOn = !audioManager.sfxMuted;
         musicToggle.isOn = !audioManager.musicMuted;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void sfx()
@@ -34,6 +29,7 @@ public class settings : MonoBehaviour
         {
             audioManager.muteSFX(true);
         }
+        onClick();
     }
 
     public void music()
@@ -46,5 +42,16 @@ public class settings : MonoBehaviour
         {
             audioManager.muteMusic(true);
         }
+        onClick();
+    }
+
+    public void onClick()
+    {
+        audioManager.Play("ui");
+    }
+
+    public void selectLevel(string levelName)
+    {
+        SceneManager.LoadScene(levelName);
     }
 }

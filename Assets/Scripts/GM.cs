@@ -33,4 +33,21 @@ public class GM : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
     }
+
+    public void pauseGame(bool pause)
+    {
+        if (pause)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
+    }
+
+    public void changeScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
 }
