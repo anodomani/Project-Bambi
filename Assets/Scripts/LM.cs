@@ -19,10 +19,16 @@ public class LM : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Restart")){
-            print("reloading scene");
-            Scene currentScene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(currentScene.name);
+        if(Input.GetButtonDown("Restart"))
+        {
+            restartScene();
         }
+    }
+
+    public void restartScene()
+    {
+        print("reloading scene");
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
     }
 }

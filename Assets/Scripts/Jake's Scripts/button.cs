@@ -7,7 +7,7 @@ using TMPro;
 
 public class button : MonoBehaviour
 {
-    private audioManager audioManager;
+    public audioManager audioManager;
     [SerializeField] Toggle sfxToggle;
     [SerializeField] Toggle musicToggle;
 
@@ -17,6 +17,14 @@ public class button : MonoBehaviour
         audioManager = FindObjectOfType<audioManager>();
         sfxToggle.isOn = !audioManager.sfxMuted;
         musicToggle.isOn = !audioManager.musicMuted;
+    }
+
+    private void Update()
+    {
+        if(audioManager == null)
+        {
+            audioManager = FindObjectOfType<audioManager>();
+        }
     }
 
     public void sfx()
@@ -53,5 +61,24 @@ public class button : MonoBehaviour
     public void selectLevel(string levelName)
     {
         SceneManager.LoadScene(levelName);
+    }
+
+    public void pauseGame(bool pause)
+    {
+        if (pause)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
+    }
+
+    public void restartScene()
+    {
+        print("reloading scene");
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
     }
 }

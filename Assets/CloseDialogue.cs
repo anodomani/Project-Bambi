@@ -7,7 +7,7 @@ public class CloseDialogue : MonoBehaviour
     //public GameObject linkedObject;
     public void Update(){
         if(Input.GetMouseButtonDown(0)){
-            this.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 }
