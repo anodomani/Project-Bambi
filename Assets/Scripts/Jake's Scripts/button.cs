@@ -14,6 +14,7 @@ public class button : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
         audioManager = FindObjectOfType<audioManager>();
         sfxToggle.isOn = !audioManager.sfxMuted;
         musicToggle.isOn = !audioManager.musicMuted;
