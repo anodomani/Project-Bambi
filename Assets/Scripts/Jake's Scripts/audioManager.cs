@@ -48,6 +48,27 @@ public class audioManager : MonoBehaviour
     {
         if(currentScene != SceneManager.GetActiveScene())
         {
+            if(SceneManager.GetActiveScene().name == "Level1")
+            {
+                foreach (sound s in sounds)
+                {
+                    if (s.music == true)
+                    {
+                        s.source.Pause();
+                    }
+                }
+                Play("winter_music");
+            }
+            else
+            {
+                foreach (sound s in sounds)
+                {
+                    if (s.music == true)
+                    {
+                        s.source.Pause();
+                    }
+                }
+            }
 
             currentScene = SceneManager.GetActiveScene();
         }

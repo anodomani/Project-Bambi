@@ -33,4 +33,9 @@ public class GM : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
     }
+
+    public void changeScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
 }

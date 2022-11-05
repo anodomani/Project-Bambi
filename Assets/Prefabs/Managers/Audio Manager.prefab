@@ -44,6 +44,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   copyPaste: FindObjectOfType<audioManager>().Play('sound name');
-  sounds: []
-  home: 0
-  game: 0
+  sounds:
+  - name: ui
+    clip: {fileID: 8300000, guid: 0e668672c00fb411f91580a455d2d5a9, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    music: 0
+    sfx: 0
+    source: {fileID: 0}
+  - name: winter_music
+    clip: {fileID: 8300000, guid: f191efdf032090e4eb9a4c14cd242511, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    music: 1
+    sfx: 0
+    source: {fileID: 0}
+  - name: spring_music
+    clip: {fileID: 8300000, guid: c6fc4df9b46a9c24db8bc3865b4b70e4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    music: 1
+    sfx: 0
+    source: {fileID: 0}
+  musicMuted: 0
+  sfxMuted: 0
