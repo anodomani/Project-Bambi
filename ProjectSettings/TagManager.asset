@@ -8,6 +8,8 @@ TagManager:
   - Entity
   - Slope
   - SlopeRight
+  - Nut
+  - ignoreSlam
   layers:
   - Default
   - TransparentFX

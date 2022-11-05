@@ -74,9 +74,13 @@ public class Player : MonoBehaviour
                     //print("groundPound");
                     c2D.enabled = false;
                     Collider2D[] slamDown = Physics2D.OverlapBoxAll(new Vector2(transform.position.x, transform.position.y - 0.5f), new Vector2(0.5f, 0.5f), 0);
-                    Collider2D[] slamSides = Physics2D.OverlapBoxAll(new Vector2(transform.position.x, transform.position.y), new Vector2(2f, 0.25f), 0);
+                    Collider2D[] slamSides = Physics2D.OverlapBoxAll(new Vector2(transform.position.x, transform.position.y), new Vector2(2f, 2f), 0);
                     c2D.enabled = true;
                     foreach(Collider2D i in slamDown){
+                        if(i.tag != "ignoreSlam"){
+                            audioManager.Play("groundPound");
+                            if(!grounded && landParticle != null){Instantiate(landParticle, new Vector2(transform.position.x, transform.position.y - transform.localScale.y/2), Quaternion.identity);}
+                        }
                         if(i.TryGetComponent(out Breakable breakable)){
                             breakable.Break();
                             transform.position = new Vector2(transform.position.x, (int)transform.position.y);
@@ -84,8 +88,6 @@ public class Player : MonoBehaviour
                         }
                     }
                     if(slamDown.Length > 0){
-                        audioManager.Play("groundPound");
-                        if(!grounded && landParticle != null){Instantiate(landParticle, new Vector2(transform.position.x, transform.position.y - transform.localScale.y/2), Quaternion.identity);}
                         GM.inst.ScreenShake(2, 100);
                         foreach(Collider2D i in slamSides){
                             if(i.TryGetComponent(out Push push)){
@@ -107,10 +109,16 @@ public class Player : MonoBehaviour
         Collider2D[] groundCheckSlide = Physics2D.OverlapBoxAll(new Vector2(transform.position.x, transform.position.y - 0.75f), new Vector2(0.2f, 0.5f), 0);
         c2D.enabled = true;
         foreach(Collider2D i in groundCheckAll){
-            if(i.tag == "Ground" || i.tag == "Entity" || i.tag == "Slope" || i.tag == "SlopeRight"){
+            if(i.tag == "Ground" || i.tag == "Nut" || i.tag == "Slope" || i.tag == "SlopeRight"){
                 grounded = i.gameObject;
                 lastGroundedPosition = Vector2Int.RoundToInt(transform.position);
                 rb2D.gravityScale = 7f;
+            } else if(i.tag == "Entity" && i.TryGetComponent(out Player player)){
+                if(player.grounded == true){
+                    grounded = i.gameObject;
+                    lastGroundedPosition = Vector2Int.RoundToInt(transform.position);
+                    rb2D.gravityScale = 7f;
+                }
             }
         }
         foreach(Collider2D i in groundCheckSlide){
@@ -161,7 +169,7 @@ public class Player : MonoBehaviour
         
         if(slideMod == 0 && sliding == 0){
             rb2D.velocity = new Vector2(moveSpeedCurrent + slideMod, rb2D.velocity.y);
-            audioManager.Play("walk");
+            //audioManager.Play("walk");
         }
         else{
             rb2D.velocity = new Vector2(slideMod, rb2D.velocity.y);
@@ -172,7 +180,7 @@ public class Player : MonoBehaviour
         //limit horizontal jump distance
         if(Mathf.Abs(lastGroundedPosition.x - transform.position.x) > maxJumpDistance.x){
             print("falling now");
-            rb2D.velocity = new Vector2(Mathf.Lerp(rb2D.velocity.x, 0, 0.75f), rb2D.velocity.y);
+            rb2D.velocity = new Vector2(Mathf.Lerp(rb2D.velocity.x, 0, 0.7f), rb2D.velocity.y);
         }
     }
 

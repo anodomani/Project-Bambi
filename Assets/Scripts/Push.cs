@@ -49,8 +49,8 @@ public class Push : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other){
         //check if hit on Left or Right
         c2D.enabled = false;
-        leftCheck = Physics2D.OverlapBox(new Vector2(transform.position.x - 0.5f, transform.position.y + 0.2f), new Vector2(0.25f, 0.75f), 0);
-        rightCheck = Physics2D.OverlapBox(new Vector2(transform.position.x + 0.5f, transform.position.y + 0.2f), new Vector2(0.25f, 0.75f), 0);
+        leftCheck = Physics2D.OverlapBox(new Vector2(transform.position.x - 0.5f, transform.position.y + 0.2f), new Vector2(0.25f, 0.5f), 0);
+        rightCheck = Physics2D.OverlapBox(new Vector2(transform.position.x + 0.5f, transform.position.y + 0.2f), new Vector2(0.25f, 0.5f), 0);
         c2D.enabled = true;
     }
     
@@ -101,7 +101,7 @@ public class Push : MonoBehaviour
 
     void OnDrawGizmos(){
         if(moving){Gizmos.color = Color.green;}else{Gizmos.color = Color.red;}
-        Gizmos.DrawWireCube(new Vector2(transform.position.x - 0.5f, transform.position.y + 0.2f), new Vector2(0.25f, 0.75f));
-        Gizmos.DrawWireCube(new Vector2(transform.position.x + 0.5f, transform.position.y + 0.2f), new Vector2(0.25f, 0.75f));
+        Gizmos.DrawWireCube(new Vector2(transform.position.x - 0.5f, transform.position.y + 0.2f), new Vector2(0.25f, 0.5f));
+        Gizmos.DrawWireCube(new Vector2(transform.position.x + 0.5f, transform.position.y + 0.2f), new Vector2(0.25f, 0.5f));
     }
 }
